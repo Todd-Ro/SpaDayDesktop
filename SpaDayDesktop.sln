@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaDayDesktop", "SpaDayDesktop\SpaDayDesktop.csproj", "{F24AB9A9-09B1-4425-AC17-95E60DF4ED3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F24AB9A9-09B1-4425-AC17-95E60DF4ED3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F24AB9A9-09B1-4425-AC17-95E60DF4ED3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F24AB9A9-09B1-4425-AC17-95E60DF4ED3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F24AB9A9-09B1-4425-AC17-95E60DF4ED3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DC74A99-73D1-44CA-96E6-A3E24AA5C697}
+	EndGlobalSection
+EndGlobal
