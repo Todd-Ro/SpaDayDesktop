@@ -13,15 +13,26 @@
 <form method='post'>
     <div class='form-group'>
         <label for='username'>Username: </label>
-        <input name='username' type='text' id='username' />
+        <input name='username' type='text' id='username' 
+        value=@ViewBag.username />
     </div>
     <div class='form-group'>
         <label for='email'>E-mail Address: </label>
-        <input name='email' type='text' id='email' />
+        <input name='email' type='email' id='email' 
+        value=@ViewBag.email />
     </div>
     <div class='form-group'>
         <label for='password'>Password: </label>
-        <input name='password' type='text' id='password' />
+        <input name='password' type='password' id='password' />
+    </div>
+    <div class='form-group'>
+        <label for='verify'>Verify Password: </label>
+        <input name='verify' type='password' id='verify' />
     </div>
     <input type='submit' value='Submit User Profile' />
 </form>
+
+@if(!(ViewBag.error is null)) {
+    <br />
+    <p style="color:red">@ViewBag.error</p>
+}

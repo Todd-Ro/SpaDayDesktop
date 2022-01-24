@@ -20,10 +20,19 @@ namespace SpaDayDesktop.Controllers
 
         [HttpPost]
         [Route("User/Add")]
-        public IActionResult SubmitAddUserForm(User newUser)
+        public IActionResult SubmitAddUserForm(User newUser, string verify)
         {
-            ViewBag.NewUser = newUser;
-            return View("Index");
+            if(verify.Equals(newUser.Password)) {
+                ViewBag.NewUser = newUser;
+                return View("Index");
+            }
+            else
+            {
+                ViewBag.error = "Passwords must match.";
+                ViewBag.username = newUser.Username;
+                ViewBag.email = newUser.Email;
+                return View("Add");
+            }
         }
 
     }
