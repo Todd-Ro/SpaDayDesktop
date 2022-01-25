@@ -101,3 +101,7 @@ body {
     clear: both;
     background-color: blue;
 }
+
+/*.field-validation-error {
+    color: red;
+}*/
