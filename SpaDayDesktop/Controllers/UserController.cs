@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SpaDayDesktop.Models;
+using SpaDayDesktop.ViewModels;
 
 namespace SpaDayDesktop.Controllers
 {
@@ -15,24 +16,39 @@ namespace SpaDayDesktop.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            AddUserViewModel addUserViewModel = new AddUserViewModel();
+            return View(addUserViewModel);
         }
 
         [HttpPost]
         [Route("User/Add")]
-        public IActionResult SubmitAddUserForm(User newUser, string verify)
+        public IActionResult Add(User newUser, string VerifyPassword, AddUserViewModel addUserViewModel)
         {
-            if(verify.Equals(newUser.Password)) {
-                ViewBag.NewUser = newUser;
-                return View("Index");
-            }
-            else
+            if (ModelState.IsValid)
             {
-                ViewBag.error = "Passwords must match.";
+                if (VerifyPassword.Equals(newUser.Password))
+                {
+
+                    {
+                        //ViewBag.NewUser = newUser;
+                        /*TODO: Change return statement to 'return View("Index, newUser")' 
+                         * and refactor Index view*/
+                        return View("Index", newUser);
+                    }
+
+                }
+                else
+                {
+                    ViewBag.error = "Passwords must match.";
+                }
+            }
+            
+                //This block executes if return statement above is not reached
                 ViewBag.username = newUser.Username;
                 ViewBag.email = newUser.Email;
-                return View("Add");
-            }
+                return View(addUserViewModel);
+            
+            
         }
 
     }

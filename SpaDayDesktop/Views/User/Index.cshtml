@@ -4,17 +4,20 @@
 @{
 }
 
+@using SpaDayDesktop.Models;
+@model User;
+
 <p>
     <a asp-controller="User" asp-action="Add">Add User</a>
 </p>
 
-@if(!(ViewBag.NewUser is null))
+@if(!(Model is null))
 {
-    <h1>Welcome @ViewBag.NewUser.Username !</h1>
+    <h1>Welcome @Model.Username !</h1>
 
     <div>
-        <p>Email: &nbsp; @ViewBag.NewUser.Email</p>
-        <p>Joined: &nbsp; @ViewBag.NewUser.Date</p>
+        <p>Email: &nbsp; @Model.Email</p>
+        <p>Joined: &nbsp; @Model.Date</p>
     </div>
 }
 
